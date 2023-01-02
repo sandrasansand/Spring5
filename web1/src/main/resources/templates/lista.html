@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layout::head">
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>Nombre:</th>
+				<th>Apellidos:</th>
+				<th>Edad</th>
+
+				<th></th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="persona: ${lista}">
+				<td th:text="${persona.nombre}"></td>
+				<td th:text="${persona.apellidos}"></td>
+				<td th:text="${persona.edad}"></td>
+				<td><a th:href="@{borrar(nombre=${persona.nombre})}"
+					th:text="'eliminar'" class="btn btn-outline-danger"></a></td>
+				<td><a th:href="@{examenes(nombre=${persona.nombre})}">Examenes</a></td>
+			</tr>
+		</tbody>
+	</table>
+	<a th:href="@{formulario}">Formulario Nuevo</a>
+</body>
+</html>
