@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<table>
+			<tr th:each="examen: ${lista}">
+				<td th:text="${examen.id}"></td>
+				<td th:text="${examen.asignatura}"></td>
+				<td><a th:href="@{borrar(id=${examen.id})}">Borrar</a></td>
+			</tr>
+		
+	</table>
+	<a th:href="@{formulario}">Formulario Nuevo</a>
+</body>
+</html>
