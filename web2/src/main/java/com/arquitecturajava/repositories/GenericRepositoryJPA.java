@@ -57,7 +57,7 @@ public class GenericRepositoryJPA<T, K> implements GenericRepository<T, K> {
 
 	@Override
 	public List<T> buscarTodos() {
-		// contruido con el api de criteria de JPA
+		// construido con el api de criteria de JPA
 
 		CriteriaBuilder cb = this.entityManager.getCriteriaBuilder();
 		CriteriaQuery<T> cq = cb.createQuery(tipo);
